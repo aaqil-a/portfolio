@@ -28,7 +28,7 @@ function ShowcaseHeader({ value, selected } : ShowcaseHeaderProps) {
 }
 
 export default function Showcase({data} : {data : ShowcaseData}) {
-    const [page, _] = useState(ShowcasePage.Projects)
+    const [page] = useState(ShowcasePage.Projects)
 
     const CurrentComponent = Projects;
     const currentData : ProjectData[] = data.projects;
