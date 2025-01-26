@@ -20,10 +20,6 @@ interface ShowcaseHeaderProps {
 }
 
 function ShowcaseHeader({ value, selected, onClickHeader } : ShowcaseHeaderProps) {
-    function handleClick() {
-        onClickHeader(value);
-    }
-
     return (
         <div
             className={selected ? 'underline underline-offset-[16px] decoration-4 decoration-accent' : 'text-[#706E81] hover:text-gray-400'} 
@@ -37,15 +33,15 @@ function ShowcaseHeader({ value, selected, onClickHeader } : ShowcaseHeaderProps
 export default function Showcase({data} : {data : ShowcaseData}) {
     const [page, setPage] = useState(ShowcasePage.Projects)
 
-    let CurrentComponent : (data : any) => JSX.Element = Projects;
-    let currentData : ProjectData[] | SkillData[] | any = data.projects;
-    if (page == ShowcasePage.Skills) {
-        currentData = data.skills;
-        CurrentComponent = Skills;
-    } else if(page == ShowcasePage.Awards) {
-        CurrentComponent = Awards;
-        currentData = data.awards;
-    }
+    let CurrentComponent = Projects;
+    let currentData : ProjectData[] = data.projects;
+    // if (page == ShowcasePage.Skills) {
+    //     currentData = data.skills;
+    //     CurrentComponent = Skills;
+    // } else if(page == ShowcasePage.Awards) {
+    //     CurrentComponent = Awards;
+    //     currentData = data.awards;
+    // }
 
     return (
         <div className="animate__animated animate__fadeIn animate__delay-2s">

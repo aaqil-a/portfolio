@@ -5,7 +5,6 @@ import { getProjects } from "@/utils/projects";
 import { ProjectData } from "./showcase/projects/projectCard";
 import { getSkills } from "@/utils/skills";
 import { SkillData } from "./showcase/skills";
-import { PropsWithChildren } from "react";
 
 export interface ShowcaseData {
     projects : ProjectData[],

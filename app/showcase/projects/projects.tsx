@@ -3,7 +3,7 @@
 import { faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import ProjectCard, { ProjectData } from "./projectCard"
-import { createRef, useEffect, useRef, useState, useTransition } from "react"
+import { useState } from "react"
 import ProjectButton from "./projectButton"
 
 

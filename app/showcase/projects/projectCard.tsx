@@ -1,6 +1,5 @@
 import Markdown from "markdown-to-jsx"
 import Image from "next/image";
-import { RefObject } from "react";
 
 export interface ProjectData {
     metadata : {
