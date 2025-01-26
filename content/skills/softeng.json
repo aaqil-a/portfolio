@@ -1,0 +1,18 @@
+{
+    "index": 0,
+    "title": "Software Engineering",
+    "content": [
+        {
+            "name" : "Web Development",
+            "images" : ["angular.svg", "react.svg", "spring.svg"]
+        },
+        {
+            "name" : "DevOps",
+            "images" : ["docker.svg", "cicd.svg", "aws.svg"]
+        },
+        {
+            "name" : "Programming",
+            "images" : ["ts.svg", "python.svg", "java.svg"]
+        }
+    ]
+}

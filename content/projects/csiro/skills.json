@@ -1,0 +1,10 @@
+[
+{
+    "title": "ML Workflow",
+    "images" : ["pytorch.svg", "scikit.svg"]
+},
+{
+    "title": "Programming",
+    "images" : ["python.svg"]
+}
+]

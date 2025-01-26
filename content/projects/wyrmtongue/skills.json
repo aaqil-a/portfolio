@@ -1,0 +1,14 @@
+[
+{
+    "title": "Web Development",
+    "images" : ["angular.svg", "mongodb.svg", "firebase.svg"]
+},
+{
+    "title": "DevOps",
+    "images" : ["docker.svg", "cicd.svg", "aws.svg"]
+},
+{
+    "title": "Programming",
+    "images" : ["ts.svg"]
+}
+]

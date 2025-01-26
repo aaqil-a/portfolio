@@ -1,0 +1,14 @@
+[
+{
+    "title": "Web Development",
+    "images" : ["svelte.svg"]
+},
+{
+    "title": "DevOps",
+    "images" : ["cicd.svg", "aws.svg"]
+},
+{
+    "title": "Programming",
+    "images" : ["ts.svg"]
+}
+]
