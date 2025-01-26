@@ -2,8 +2,8 @@
 
 function BioLine({text} : {text : string}) {
     return (
-        <div className="min-h-6 flex overflow-hidden items-center text-nowrap">
-            <span className={"bg-background " + (text.length && "pr-2")}>
+        <div className="min-h-6 flex items-center overflow-hidden">
+            <span className={"bg-background " + (text.length && "pr-2")}>   
                 {text}
             </span>
             <div className="min-w-6 h-2 grow -z-10 animate__animated animate__slideInLeft animate__slow bg-accentDarker"/>
@@ -19,7 +19,12 @@ export default function Bio() {
         <h2 className="text-3xl mb-6 text-center">
             Developer Portfolio
         </h2>
-        <div className="text-l">
+        <div className="text-l hidden md:block">
+            <BioLine text="I like to work on meaningful projects while"/>
+            <BioLine text="learning something new."/>
+            <BioLine text=""/>
+        </div>
+        <div className="text-l block md:hidden">
             <BioLine text="I like to work on meaningful"/>
             <BioLine text="projects while learning"/>
             <BioLine text="something new."/>
