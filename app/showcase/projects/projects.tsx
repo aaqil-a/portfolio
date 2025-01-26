@@ -14,10 +14,6 @@ import { StaticImageData } from "next/image"
 export default function Projects({ data } : {data : ProjectData[]}) {
     const [project, setProject] = useState(0);
 
-    const projectButtons = data.map((_, i) => 
-        <ProjectButton key={i} idx={i} selected={i == project} onProjectButtonClick={setProject}/>
-    )
-
     const images : ({[key : string] : StaticImageData} ) = {
         "csiro": csiroImage,
         "seismicvis" : seismicVisImage,
@@ -68,6 +64,15 @@ export default function Projects({ data } : {data : ProjectData[]}) {
             }
         }, 1)
     }
+
+    function projectButtonClick(idx : number) {
+        setProject(idx);
+        setOffset(idx * projectsGap);
+    }
+
+    const projectButtons = data.map((_, i) => 
+        <ProjectButton key={i} idx={i} selected={i == project} onProjectButtonClick={projectButtonClick}/>
+    )
 
     return (
         <div className="flex flex-col gap-8 items-center">
