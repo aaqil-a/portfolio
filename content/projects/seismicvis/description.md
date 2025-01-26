@@ -1,7 +1,7 @@
 ---
 title: Seismic Data 3D Visualiser
 subtitle: 3D Web Application Project
-image: seismicvis.jpg
+image: seismicvis
 start_date: 2021-12-01
 end_date: 2022-04-01
 index: 3

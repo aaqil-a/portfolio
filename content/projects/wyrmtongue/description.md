@@ -1,7 +1,7 @@
 ---
 title: AI Tool for Role-Playing Games
 subtitle: Full Stack Web Application Personal Project
-image : wyrmtongue.png
+image : wyrmtongue
 index: 1
 ---
 

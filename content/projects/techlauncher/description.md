@@ -1,7 +1,7 @@
 ---
 title: Portrait Data Visualiser
 subtitle: Artistic Web Application Project @ ANU
-image: techlauncher.png
+image: techlauncher
 start_date: 2023-07-01
 end_date: 2024-06-01
 index: 0

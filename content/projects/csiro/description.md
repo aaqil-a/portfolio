@@ -1,7 +1,7 @@
 ---
 title: Semi-Supervised Object Detection Research
 subtitle: Research Internship @ CSIRO
-image: csiro.jpg
+image: csiro
 start_date: 2022-11-01
 end_date: 2023-08-01
 index: 2

@@ -5,8 +5,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import ProjectCard, { ProjectData } from "./projectCard"
 import { useState } from "react"
 import ProjectButton from "./projectButton"
-
-
+import csiroImage from "../../../public/projects/csiro.jpg";
+import seismicVisImage from "../../../public/projects/seismicvis.jpg";
+import techlauncherImage from "../../../public/projects/techlauncher.png";
+import wyrmtongueImage from "../../../public/projects/wyrmtongue.png";
+import { StaticImageData } from "next/image"
 
 export default function Projects({ data } : {data : ProjectData[]}) {
     const [project, setProject] = useState(0);
@@ -15,22 +18,31 @@ export default function Projects({ data } : {data : ProjectData[]}) {
         <ProjectButton key={i} idx={i} selected={i == project} onProjectButtonClick={setProject}/>
     )
 
+    const images : ({[key : string] : StaticImageData} ) = {
+        "csiro": csiroImage,
+        "seismicvis" : seismicVisImage,
+        "techlauncher" : techlauncherImage,
+        "wyrmtongue" : wyrmtongueImage,   
+    }
+
     const projectsGap = 150;
     const [offset, setOffset] = useState(0)
     const projectComponents = data.map((projectData, i) => 
-        <ProjectCard key={i} translate={-50 + projectsGap*i - offset} selected={project == i} data={projectData}/>
+        <ProjectCard 
+            key={i} 
+            translate={-50 + projectsGap*i - offset} 
+            selected={project == i} data={projectData}
+            image={images[projectData.metadata.image]}    
+        />
     )
 
     let animationId : NodeJS.Timeout | undefined = undefined;
 
     function nextProject() {
-        // if(animationId) endAnimation();
-        // setNewProject(Math.min(project + 1, data.length-1));
         slideAnimation();
         setProject(i => Math.min(i+1, data.length-1));
     }
     function prevProject() {
-        // setOldProject(project);
         slideAnimation(false);
         setProject(i => Math.max(i-1, 0));
     }

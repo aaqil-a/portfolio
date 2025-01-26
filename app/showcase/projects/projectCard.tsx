@@ -1,5 +1,5 @@
 import Markdown from "markdown-to-jsx"
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 
 export interface ProjectData {
     metadata : {
@@ -45,7 +45,7 @@ function RelatedSkills({data} : {data : RelatedSkillsData[]}) {
                 Related Skills
             </div>
             <div className="bg-backgroundAccent w-full h-0.5 mt-2 mb-6"/>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-8 auto-rows-fr text-center">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 auto-rows-fr text-center">
                 {skillComponents}
             </div>
         </div>
@@ -54,13 +54,16 @@ function RelatedSkills({data} : {data : RelatedSkillsData[]}) {
 
 interface ProjectCardProps {
     data : ProjectData, 
+    image : StaticImageData,
     translate : number,
     selected : boolean
 }
 
-export default function ProjectCard({data, translate, selected} : ProjectCardProps) {
+
+export default function ProjectCard({data, image, translate, selected} : ProjectCardProps) {
     const metadata = data.metadata;
     const content = data.content;
+
 
     const dateSpan = 
         `, ${metadata.start_date?.toLocaleDateString('default', {month: 'long', year: 'numeric'})} - 
@@ -70,13 +73,13 @@ export default function ProjectCard({data, translate, selected} : ProjectCardPro
 
     return (
         <div 
-            className={`absolute top-0 left-1/2 animate__animated ${selected ? 'animate__fadeIn' : 'animate__fadeOut'}`} 
+            className={`absolute max-w-2xl w-[96%] p-2 top-0 left-1/2 animate__animated ${selected ? 'animate__fadeIn' : 'animate__fadeOut'}`} 
             style={{translate : translate+'% 0'}}>
-            <div className="min-w-96 rounded-lg flex flex-col items-center">
+            <div className="rounded-lg flex flex-col items-center text-center">
                 <div className="text-2xl">{metadata.title}</div>
                 <div className="text-lg">{metadata.subtitle}{metadata.start_date && dateSpan}</div>
-                <Image src={'/projects/' + metadata.image} alt={metadata.title} width={1280} height={720} className="rounded-lg w-[90%] my-8"/>
-                <Markdown className="text-justify text-base font-inter flex flex-col gap-4 w-full">{content}</Markdown>
+                <Image placeholder="blur" src={image} alt={metadata.title} width={1280} height={720} className="rounded-lg w-[90%] my-8"/>
+                <Markdown className="text-left text-sm text-justify md:text-base font-inter flex flex-col gap-4 w-full">{content}</Markdown>
                 {relatedSkills}
             </div>
         </div>
