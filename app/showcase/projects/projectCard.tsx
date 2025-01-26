@@ -73,7 +73,7 @@ export default function ProjectCard({data, image, translate, selected} : Project
 
     return (
         <div 
-            className={`absolute max-w-2xl w-[96%] p-2 top-0 left-1/2 animate__animated ${selected ? 'animate__fadeIn' : 'animate__fadeOut'}`} 
+            className={`absolute max-w-2xl w-[96%] p-2 top-0 left-1/2 animate__animated animate__faster ${selected ? 'animate__fadeIn' : 'animate__fadeOut'}`} 
             style={{translate : translate+'% 0'}}>
             <div className="rounded-lg flex flex-col items-center text-center">
                 <div className="text-2xl">{metadata.title}</div>

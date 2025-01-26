@@ -25,7 +25,7 @@ export default function Projects({ data } : {data : ProjectData[]}) {
         "wyrmtongue" : wyrmtongueImage,   
     }
 
-    const projectsGap = 150;
+    const projectsGap = 250;
     const [offset, setOffset] = useState(0)
     const projectComponents = data.map((projectData, i) => 
         <ProjectCard 
