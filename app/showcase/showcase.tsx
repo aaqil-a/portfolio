@@ -32,13 +32,6 @@ export default function Showcase({data} : {data : ShowcaseData}) {
 
     const CurrentComponent = Projects;
     const currentData : ProjectData[] = data.projects;
-    // if (page == ShowcasePage.Skills) {
-    //     currentData = data.skills;
-    //     CurrentComponent = Skills;
-    // } else if(page == ShowcasePage.Awards) {
-    //     CurrentComponent = Awards;
-    //     currentData = data.awards;
-    // }
 
     return (
         <div className="animate__animated animate__fadeIn animate__delay-2s">

@@ -14,6 +14,12 @@ import { StaticImageData } from "next/image"
 export default function Projects({ data } : {data : ProjectData[]}) {
     const [project, setProject] = useState(0);
 
+    if(typeof window !== 'undefined') {
+        window.onbeforeunload = function () {
+            window.scrollTo(0, 0);
+        }
+    }
+
     const images : ({[key : string] : StaticImageData} ) = {
         "csiro": csiroImage,
         "seismicvis" : seismicVisImage,
@@ -31,6 +37,8 @@ export default function Projects({ data } : {data : ProjectData[]}) {
             image={images[projectData.metadata.image]}    
         />
     )
+    
+
 
     let animationId : NodeJS.Timeout | undefined = undefined;
 

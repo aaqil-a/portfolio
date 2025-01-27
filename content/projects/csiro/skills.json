@@ -1,10 +1,12 @@
 [
 {
     "title": "ML Workflow",
+    "skills" : ["PyTorch", "scikit-learn"],
     "images" : ["pytorch.svg", "scikit.svg"]
 },
 {
     "title": "Programming",
+    "skills" : ["Python"],
     "images" : ["python.svg"]
 }
 ]

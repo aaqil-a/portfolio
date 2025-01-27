@@ -1,10 +1,12 @@
 [
 {
     "title": "Data Analysis",
+    "skills" : ["Numpy"],
     "images" : ["numpy.svg"]
 },
 {
     "title": "Programming",
+    "skills" : ["Python", "JavaScript"],
     "images" : ["python.svg", "js.svg"]
 }
 ]

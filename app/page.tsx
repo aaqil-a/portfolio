@@ -3,21 +3,15 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
 import { getProjects } from "@/utils/projects";
 import { ProjectData } from "./showcase/projects/projectCard";
-import { getSkills } from "@/utils/skills";
-import { SkillData } from "./showcase/skills";
 import Bio from "./bio";
 
 export interface ShowcaseData {
     projects : ProjectData[],
-    skills : SkillData[],
-    awards : string[],
 }
 
 export default function Home() {
     const showcase = {
         projects: getProjects(),
-        skills : getSkills(),
-        awards : [],
     } as ShowcaseData;
 
     return (
@@ -46,6 +40,7 @@ export default function Home() {
             <Bio/>
 
             <Showcase data={showcase}/>
+
         </>
     );
 }

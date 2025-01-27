@@ -1,14 +1,17 @@
 [
 {
     "title": "Web Development",
+    "skills" : ["Angular", "MongoDB", "Firebase"],
     "images" : ["angular.svg", "mongodb.svg", "firebase.svg"]
 },
 {
     "title": "DevOps",
+    "skills" : ["Docker", "CI/CD", "AWS"],
     "images" : ["docker.svg", "cicd.svg", "aws.svg"]
 },
 {
     "title": "Programming",
+    "skills" : ["TypeScript"],
     "images" : ["ts.svg"]
 }
 ]

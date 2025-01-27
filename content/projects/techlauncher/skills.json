@@ -1,14 +1,17 @@
 [
 {
     "title": "Web Development",
+    "skills" : ["Svelte"],
     "images" : ["svelte.svg"]
 },
 {
     "title": "DevOps",
+    "skills" : ["CI/CD", "AWS"],
     "images" : ["cicd.svg", "aws.svg"]
 },
 {
     "title": "Programming",
+    "skills" : ["TypeScript"],
     "images" : ["ts.svg"]
 }
 ]

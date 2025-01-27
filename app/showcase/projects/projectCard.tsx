@@ -1,5 +1,6 @@
 import Markdown from "markdown-to-jsx"
 import Image, { StaticImageData } from "next/image";
+import SkillIcon from "./skillIcon";
 
 export interface ProjectData {
     metadata : {
@@ -16,15 +17,14 @@ export interface ProjectData {
 
 interface RelatedSkillsData {
     title : string,
+    skills : string[],
     images : string[],
 }
 
 function RelatedSkills({data} : {data : RelatedSkillsData[]}) {
     const skillComponents = data.map((d, i) => {
-        const images = d.images?.map((path) => 
-            <div key={path} className="relative w-8 h-8">
-                <Image src={'/skills/' + path} fill alt={path}/>
-            </div>
+        const images = d.skills.map((name, j) => 
+            <SkillIcon key={name} name={name} path={d.images[j]}/>
         );
 
         return (
@@ -73,7 +73,7 @@ export default function ProjectCard({data, image, translate, selected} : Project
 
     return (
         <div 
-            className={`absolute max-w-2xl w-[96%] p-2 top-0 left-1/2 animate__animated animate__faster ${selected ? 'animate__fadeIn' : 'animate__fadeOut'}`} 
+            className={`absolute max-w-2xl w-[96%] p-2 pb-16 top-0 left-1/2 animate__animated animate__faster ${selected ? 'animate__fadeIn' : 'animate__fadeOut'}`} 
             style={{translate : translate+'% 0'}}>
             <div className="rounded-lg flex flex-col items-center text-center">
                 <div className="text-2xl">{metadata.title}</div>
@@ -83,6 +83,5 @@ export default function ProjectCard({data, image, translate, selected} : Project
                 {relatedSkills}
             </div>
         </div>
-
     )
 }
