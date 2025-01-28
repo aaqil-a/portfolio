@@ -34,7 +34,7 @@ export default function Showcase({data} : {data : ShowcaseData}) {
     const currentData : ProjectData[] = data.projects;
 
     return (
-        <div className="animate__animated animate__fadeIn animate__delay-2s">
+        <div className="animate__animated animate__fadeIn animate__delay-1s">
             <div className="flex items-center justify-center gap-32 w-full text-3xl">
                 <ShowcaseHeader value={ShowcasePage.Projects} selected={page == ShowcasePage.Projects}/>
             </div>
